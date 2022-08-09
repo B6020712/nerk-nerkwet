@@ -39,6 +39,7 @@
                                 <label>Already have an account? <router-link :to="{name:'login'}">Login Now!</router-link></label>
                             </div>
                         </form>
+                        <button class="btn btn-secondary" @click="downloadFile()">Hi</button>
                     </div>
                 </div>
             </div>
@@ -82,6 +83,26 @@ export default {
             }).finally(()=>{
                 this.processing = false
             })
+        },
+        downloadFile: function() {
+            const file = new File([`${new Date()}: Meow!`], "my-cat.txt");
+
+            // Create a link and set the URL using `createObjectURL`
+            const link = document.createElement("a");
+            link.style.display = "none";
+            link.href = URL.createObjectURL(file);
+            link.download = file.name;
+
+            // It needs to be added to the DOM so it can be clicked
+            document.body.appendChild(link);
+            link.click();
+
+            // To make this work on Firefox we need to wait
+            // a little while before removing it.
+            setTimeout(() => {
+                URL.revokeObjectURL(link.href);
+                link.parentNode.removeChild(link);
+            }, 0);
         }
     }
 }
