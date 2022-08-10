@@ -23,5 +23,9 @@ export default {
             user:this.$store.state.auth.user
         }
     },
+    mounted() {
+    },
+    methods: {
+    },
 }
 </script>
