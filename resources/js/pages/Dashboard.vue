@@ -22,6 +22,6 @@ export default {
         return {
             user:this.$store.state.auth.user
         }
-    }
+    },
 }
 </script>
