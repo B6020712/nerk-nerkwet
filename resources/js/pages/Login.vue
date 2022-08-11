@@ -52,7 +52,7 @@ export default {
             processing:false
         }
     },
-    methods:{
+    methods: {
         ...mapActions({
             signIn:'auth/login'
         }),
@@ -71,7 +71,7 @@ export default {
             }).finally(()=>{
                 this.processing = false
             })
-        },
-    }
+        }
+    },
 }
 </script>
