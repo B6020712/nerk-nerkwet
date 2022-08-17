@@ -1,8 +1,9 @@
 <template>
     <div class="container h-100">
-        <div class="row h-100 align-items-center mt-3">
-            <div class="col-12 col-md-6 offset-md-3">
+        <div class="row h-100 align-items-center" style="padding-top: 20%;">
+            <div class="col-12 col-md-4 offset-md-4">
                 <div class="card shadow sm">
+                    <span class="placeholder col-12 bg-primary"></span>
                     <div class="card-body">
                         <h1 class="text-center">Login</h1>
                         <hr/>
@@ -22,16 +23,15 @@
                                 <label for="password" class="font-weight-bold">Password</label>
                                 <input type="password" v-model="auth.password" name="password" id="password" class="form-control">
                             </div>
-                            <div class="col-12 mb-2">
-                                <button type="submit" :disabled="processing" @click="login" class="btn btn-primary btn-block">
-                                    {{ processing ? "Please wait" : "Login" }}
-                                </button>
+                            <div class="col-12 my-3">
+                                <button style="width: 100%;" type="submit" :disabled="processing" @click="login" class="btn btn-primary btn-block"> {{ processing ? "Please wait" : "Login" }} </button>
                             </div>
                             <div class="col-12 text-center">
-                                <label>Don't have an account? <router-link :to="{name:'register'}">Register Now!</router-link></label>
+                                <label>Don't have an account? <router-link :to="{ name: 'register' }">Register Now!</router-link></label>
                             </div>
                         </form>
                     </div>
+                    <span class="placeholder col-12 bg-primary"></span>
                 </div>
             </div>
         </div>
